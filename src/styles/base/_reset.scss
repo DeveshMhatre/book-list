@@ -16,6 +16,6 @@ body {
 }
 
 a {
-  color: $dark-color;
+  color: var(--dark-color);
   text-decoration: none;
 }

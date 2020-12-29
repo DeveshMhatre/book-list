@@ -1,0 +1,15 @@
+// Using CSS variables as they get processed as is
+
+// Make sure to use these variables for colors
+// instead of scss variables throughout the app
+.dark {
+  --light-color: #FFFFFF;
+  --dark-color: #000000;
+  --accent-color: #3E3636;
+}
+
+.light {
+  --light-color: #D72323;
+  --dark-color: #FFFFFF;
+  --accent-color: #CDCDCD;
+}

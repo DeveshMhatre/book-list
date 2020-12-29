@@ -9,7 +9,8 @@ const Header = props => {
       <header className="header">
         <h1 className="header__title">Reading List</h1>
         <button
-          className="header__btn nav-btn">
+          className="header__btn nav-btn"
+          onClick={props.handleClick}>
           <ThemeSwitch className="header__img" />
         </button>
       </header>
