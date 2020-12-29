@@ -1,0 +1,7 @@
+@function vw($target, $base-width: 360px) {
+  @return ($target * 100vw) / $base-width;
+}
+
+@function vh($target, $base-height: 640px) {
+  @return ($target * 100vh) / $base-height;
+}

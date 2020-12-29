@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import Header from './Header';
+import ReadingList from './ReadingList';
 
 const App = () => {
   const [theme, setTheme] = useState('dark');
@@ -15,6 +16,7 @@ const App = () => {
     // color variables change for everything inside of <main>
     <main className={`app ${theme}`}>
       <Header handleClick={themeSwitch} />
+      <ReadingList />
     </main>
   );
 }

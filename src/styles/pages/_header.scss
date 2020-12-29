@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
-  height: 7rem;
-  padding: 0 2rem;
+  height: vh(70px);
+  padding: 0 vw(20px);
   border: none;
   border-bottom-left-radius: 2.5rem;
 
@@ -12,7 +12,7 @@
   background-color: var(--dark-color);
 
   &__title {
-    font-size: 2.2rem;
+    font-size: vw(22px);
     color: var(--light-color)
   }
 
@@ -21,8 +21,8 @@
   }
 
   &__img {
-    width: 3.3rem;
-    height: 3.3rem;
+    width: vw(33px);
+    height: vh(33px);
 
     fill: var(--light-color);
   }

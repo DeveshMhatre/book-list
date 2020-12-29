@@ -1,0 +1,71 @@
+.reading-list {
+  width: 100%;
+  min-height: calc(100vh - #{vh(70px)});
+  padding: 0 vw(20px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-bottom: vh(37px);
+    font-size: vw(20px);
+    color: var(--light-color);
+  }
+
+  &__img {
+    width: vw(200px);
+    height: vh(335px);
+    .book {
+      path:not(:last-child) {
+        fill: var(--petal-color);
+      }
+    }
+
+    .pot {
+      &__base {
+        fill: var(--pot-color);
+      }
+
+      &__petals {
+        fill: var(--petal-color);
+      }
+    }
+
+    // Animation for each book
+    #left-tilted-book {
+      opacity: 0;
+      animation: firstBook 6000ms ease-in forwards;
+    }
+    #first-center-book {
+      opacity: 0;
+      animation: secondBook 5000ms ease-in 1000ms forwards;
+    }
+    #right-book {
+      opacity: 0;
+      animation: thirdBook 4000ms ease-in 2000ms forwards;
+    }
+    #left-book {
+      opacity: 0;
+      animation: fourthBook 3000ms ease-in 3000ms forwards;
+    }
+    #second-center-book {
+      opacity: 0;
+      animation: fifthBook 2000ms ease-in 4000ms forwards;
+    }
+    #right-tilted-book {
+      opacity: 0;
+      animation: sixthBook 1000ms ease-in 5000ms forwards;
+    }
+  }
+}
+
+// Different keyframes so the books appear one after another
+// Second argument denotes at which point should the book appear
+@include animateBooks(firstBook, 16.66%);
+@include animateBooks(secondBook, 20%);
+@include animateBooks(thirdBook, 25%);
+@include animateBooks(fourthBook, 33.33%);
+@include animateBooks(fifthBook, 50%);
+@include animateBooks(sixthBook, 100%);
