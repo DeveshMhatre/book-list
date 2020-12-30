@@ -69,3 +69,23 @@
 @include animateBooks(fourthBook, 33.33%);
 @include animateBooks(fifthBook, 50%);
 @include animateBooks(sixthBook, 100%);
+
+@media screen and (min-width: 768px) {
+  .reading-list {
+    min-height: calc(100vh - #{vh(70px, 768px)});
+
+    &__title {
+      font-size: vw(20px, 768px);
+    }
+    &__img {
+      width: vw(200px, 768px);
+      height: vh(335px);
+    }
+    &__btn {
+      &__img {
+        width: vw(30px, 768px);
+        height: vw(30px, 768px);
+      }
+    }
+  }
+}

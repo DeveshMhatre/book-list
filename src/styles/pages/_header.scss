@@ -27,3 +27,13 @@
     fill: var(--light-color);
   }
 }
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: vh(70px, 768px);
+
+    &__title {
+      font-size: vw(22px, 768px);
+    }
+  }
+}

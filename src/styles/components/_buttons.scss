@@ -4,3 +4,33 @@
   background: transparent;
 }
 
+.add-btn {
+  position: fixed;
+  bottom: vh(30px);
+  right: vw(20px);
+
+  border: .1rem solid var(--light-color);
+  border-radius: 50%;
+  padding: 1.5rem;
+
+  background-color: var(--dark-color);
+
+  cursor: pointer;
+  z-index: 99;
+}
+
+.overlay-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 0;
+
+  background-color: var(--light-color);
+  font-size: 1.8rem;
+  color: var(--dark-color);
+
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-right: 2rem;
+  }
+}

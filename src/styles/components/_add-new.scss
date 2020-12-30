@@ -1,0 +1,10 @@
+.add-new__btn {
+  &--img {
+    width: vw(30px);
+    height: vh(30px);
+
+    path {
+      fill: var(--light-color);
+    }
+  }
+}
