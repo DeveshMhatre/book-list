@@ -25,6 +25,7 @@
     height: clamp(3.3rem, 4vw, 4rem);
 
     fill: var(--light-color);
+    pointer-events: none;
   }
 }
 

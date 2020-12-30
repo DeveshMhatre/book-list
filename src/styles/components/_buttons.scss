@@ -8,7 +8,7 @@
   outline: none;
 }
 
-.add-btn {
+.add-btn--on {
   position: fixed;
   bottom: clamp(3rem, 5vh, 5rem);
   right: clamp(4rem, 10vw, 10rem);
@@ -22,11 +22,38 @@
   cursor: pointer;
   z-index: 99;
   outline: none;
+
+  animation: addBtnAppear 300ms ease-in;
+}
+
+.add-btn--off {
+  @extend .add-btn--on;
+  animation: addBtnDisappear 300ms ease-out forwards;
+}
+
+@keyframes addBtnAppear {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes addBtnDisappear {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
 }
 
 .overlay-btn {
   padding: clamp(1rem, 2vh, 2rem);
-  border: none;
+  border: .1rem solid var(--dark-color);
   border-radius: 0;
 
   background-color: var(--light-color);
@@ -36,7 +63,15 @@
   cursor: pointer;
   outline: none;
 
+  transition: background-color, color 300ms ease-in;
+
   &:first-of-type {
     margin-right: 2rem;
+  }
+
+  &:hover {
+    border: .1rem solid var(--light-color);
+    background-color: var(--dark-color);
+    color: var(--light-color);
   }
 }

@@ -8,7 +8,7 @@ const AddNew = props => {
     return (
       <>
         <button
-          className="add-new__btn add-btn"
+          className="add-new__btn add-btn--on"
           onClick={props.handleOverlay}>
           <Add className="add-new__btn--img" />
         </button>
@@ -19,6 +19,10 @@ const AddNew = props => {
   else {
     return(
       <>
+        <button
+          className="add-new__btn add-btn--off">
+          <Add className="add-new__btn--img" />
+        </button>
       </>
     );
   }
