@@ -1,22 +1,24 @@
 .reading-list {
-  width: 100%;
-  min-height: calc(100vh - #{vh(70px)});
-  padding: 0 vw(20px);
+  width: calc(100vw - clamp(4rem, 10vw, 10rem));
+  margin: 0 auto;
+  min-height: calc(100vh - clamp(7rem, 10vh, 10rem));
+  padding: 0 clamp(2rem, 5vw, 5rem);
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   &__title {
-    margin-bottom: vh(37px);
-    font-size: vw(20px);
+    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--light-color);
+    text-align: center;
   }
 
   &__img {
-    width: vw(200px);
-    height: vh(335px);
+    width: clamp(20rem, 40vw, 35rem);
+    height: clamp(33.5rem, 50vh, 60rem);
+
     .book {
       path:not(:last-child) {
         fill: var(--petal-color);
@@ -69,23 +71,3 @@
 @include animateBooks(fourthBook, 33.33%);
 @include animateBooks(fifthBook, 50%);
 @include animateBooks(sixthBook, 100%);
-
-@media screen and (min-width: 768px) {
-  .reading-list {
-    min-height: calc(100vh - #{vh(70px, 768px)});
-
-    &__title {
-      font-size: vw(20px, 768px);
-    }
-    &__img {
-      width: vw(200px, 768px);
-      height: vh(335px);
-    }
-    &__btn {
-      &__img {
-        width: vw(30px, 768px);
-        height: vw(30px, 768px);
-      }
-    }
-  }
-}

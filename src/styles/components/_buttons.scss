@@ -1,34 +1,40 @@
 .nav-btn {
   border: none;
+  border-radius: 50%;
+  padding: clamp(.5rem, 1vh, 1rem) clamp(.5rem, 1.5vw, 1.5rem);
 
-  background: transparent;
+  background-color: var(--accent-color);
+
+  outline: none;
 }
 
 .add-btn {
   position: fixed;
-  bottom: vh(30px);
-  right: vw(20px);
+  bottom: clamp(3rem, 5vh, 5rem);
+  right: clamp(4rem, 10vw, 10rem);
 
   border: .1rem solid var(--light-color);
   border-radius: 50%;
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2rem);
 
   background-color: var(--dark-color);
 
   cursor: pointer;
   z-index: 99;
+  outline: none;
 }
 
 .overlay-btn {
-  padding: 1rem;
+  padding: clamp(1rem, 2vh, 2rem);
   border: none;
   border-radius: 0;
 
   background-color: var(--light-color);
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   color: var(--dark-color);
 
   cursor: pointer;
+  outline: none;
 
   &:first-of-type {
     margin-right: 2rem;

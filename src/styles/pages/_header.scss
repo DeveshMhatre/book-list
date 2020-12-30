@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
-  height: vh(70px);
-  padding: 0 vw(20px);
+  height: clamp(7rem, 10vh, 10rem);
+  padding: 0 clamp(4rem, 10vw, 10rem);
   border: none;
   border-bottom-left-radius: 2.5rem;
 
@@ -12,7 +12,7 @@
   background-color: var(--dark-color);
 
   &__title {
-    font-size: vw(22px);
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
     color: var(--light-color)
   }
 
@@ -21,19 +21,10 @@
   }
 
   &__img {
-    width: vw(33px);
-    height: vh(33px);
+    width: clamp(3.3rem, 4vw, 4rem);
+    height: clamp(3.3rem, 4vw, 4rem);
 
     fill: var(--light-color);
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header {
-    height: vh(70px, 768px);
-
-    &__title {
-      font-size: vw(22px, 768px);
-    }
-  }
-}

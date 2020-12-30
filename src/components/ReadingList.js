@@ -29,13 +29,13 @@ const ReadingList = props => {
 
         <Bookshelf className="reading-list__img" />
 
+        <AddNew
+          isOverlay={isOverlay}
+          handleOverlay={handleOverlay} />
+
         <InputOverlay
           isOverlay={isOverlay}
           handleBookSubmit={handleBookSubmit}
-          handleOverlay={handleOverlay} />
-
-        <AddNew
-          isOverlay={isOverlay}
           handleOverlay={handleOverlay} />
 
       </article>

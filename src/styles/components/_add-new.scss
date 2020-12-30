@@ -1,7 +1,7 @@
 .add-new__btn {
   &--img {
-    width: vw(30px);
-    height: vh(30px);
+    width: clamp(3rem, 4vw, 4rem);
+    height: clamp(3rem, 4vh, 4rem);
 
     path {
       fill: var(--light-color);
