@@ -14,8 +14,11 @@ const App = () => {
   return (
     // When <main>'s class changes from dark to light and vice versa,
     // color variables change for everything inside of <main>
-    <main className={`app ${theme}`}>
-      <Header handleClick={themeSwitch} />
+    <main
+      className={`app ${theme}`}>
+      <Header
+        theme={theme}
+        handleClick={themeSwitch} />
       <ReadingList />
     </main>
   );

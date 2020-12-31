@@ -1,8 +1,11 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import { ReactComponent as ThemeSwitch } from '../images/theme-switch.svg';
 
 const Header = props => {
+  const nodeRef = React.useRef(null);
+
   return (
     <>
 
@@ -11,7 +14,17 @@ const Header = props => {
         <button
           className="header__btn nav-btn"
           onClick={props.handleClick}>
-          <ThemeSwitch className="header__img" />
+
+          <CSSTransition
+            nodeRef={nodeRef}
+            in={props.theme === 'dark' ? true : false}
+            classNames="rotate"
+            timeout={300}>
+            <ThemeSwitch
+              ref={nodeRef}
+              className="header__img" />
+          </CSSTransition>
+
         </button>
       </header>
 

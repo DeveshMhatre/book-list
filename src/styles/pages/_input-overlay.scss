@@ -12,8 +12,6 @@
 
   background-color: rgba(var(--accent-color-rgb), .57);
 
-  animation: formAppear 300ms ease-in;
-
   &__form {
     width: clamp(32rem, 50vw, 60rem);
     height: clamp(33.4rem, 50vh, 60rem);
@@ -59,15 +57,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
-}
-
-@keyframes formAppear {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
   }
 }
 

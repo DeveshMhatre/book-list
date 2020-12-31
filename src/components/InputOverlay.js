@@ -1,9 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 const InputOverlay = props => {
   const [title, setTitle] = useState(''); // To store title of the new book
   const [author, setAuthor] = useState(''); // To store author of the new book
+
+  const nodeRef = React.useRef(null);
 
   const handleTitle = e => {
     setTitle(e.target.value);
@@ -43,68 +46,68 @@ const InputOverlay = props => {
     props.handleOverlay();
   }
 
-  if (props.isOverlay) {
-    return (
-      <>
-        <section className="overlay">
-          <div className="overlay__form">
-            <form className="form">
+  // unmountOnExit to keep it from rendering onLoad
+  return (
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={props.isOverlay}
+      classNames="scale"
+      unmountOnExit={true}
+      timeout={300}>
+      <section 
+        ref={nodeRef}
+        className="overlay">
+        <div className="overlay__form">
+          <form className="form">
 
-              <div className="form__group">
-                <label
-                  className="form__label"
-                  htmlFor="form-title">
-                  New Book Title
-                </label>
-                <input
-                  type="text"
-                  className="form__input"
-                  id="form-title"
-                  value={title}
-                  onChange={handleTitle}
-                  placeholder="Enter book title here&hellip;" />
-              </div>
+            <div className="form__group">
+              <label
+                className="form__label"
+                htmlFor="form-title">
+                New Book Title
+              </label>
+              <input
+                type="text"
+                className="form__input"
+                id="form-title"
+                value={title}
+                onChange={handleTitle}
+                placeholder="Enter book title here&hellip;" />
+            </div>
 
-              <div className="form__group">
-                <label
-                  className="form__label"
-                  htmlFor="form-author">
-                  New Book Author
-                </label>
-                <input
-                  type="text"
-                  className="form__input"
-                  id="form-author"
-                  value={author}
-                  onChange={handleAuthor}
-                  placeholder="Enter book author here&hellip;" />
-              </div>
+            <div className="form__group">
+              <label
+                className="form__label"
+                htmlFor="form-author">
+                New Book Author
+              </label>
+              <input
+                type="text"
+                className="form__input"
+                id="form-author"
+                value={author}
+                onChange={handleAuthor}
+                placeholder="Enter book author here&hellip;" />
+            </div>
 
-              <div className="form__btns">
-                <button
-                  onClick={handleSubmit}
-                  className="overlay-btn">
-                  Add Book
-                </button>
-                <button
-                  onClick={handleCancel}
-                  className="overlay-btn">
-                  Cancel
-                </button>
-              </div>
+            <div className="form__btns">
+              <button
+                onClick={handleSubmit}
+                className="overlay-btn">
+                Add Book
+              </button>
+              <button
+                onClick={handleCancel}
+                className="overlay-btn">
+                Cancel
+              </button>
+            </div>
 
-            </form>
-          </div>
-        </section>
-      </>
-    );
-  }
-  else {
-    return (
-      <>
-      </>
-    );
-  }
+          </form>
+        </div>
+      </section>
+    </CSSTransition>
+  );
 }
 
 export default InputOverlay;

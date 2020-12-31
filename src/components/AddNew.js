@@ -1,31 +1,27 @@
 import React from 'react';
 
+import { CSSTransition } from 'react-transition-group';
+
 import { ReactComponent as Add } from '../images/add.svg';
 
 const AddNew = props => {
-  // Hide when input overlay is active
-  if (!props.isOverlay) {
-    return (
-      <>
-        <button
-          className="add-new__btn add-btn--on"
-          onClick={props.handleOverlay}>
-          <Add className="add-new__btn--img" />
-        </button>
-      </>
-    );
-  }
+  // To avoid the findDOMNode warning
+  const nodeRef = React.useRef(null);
 
-  else {
-    return(
-      <>
-        <button
-          className="add-new__btn add-btn--off">
-          <Add className="add-new__btn--img" />
-        </button>
-      </>
-    );
-  }
+  return (
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={!props.isOverlay}
+      classNames='scale'
+      timeout={300}>
+      <button
+        ref={nodeRef}
+        className="add-new__btn add-btn"
+        onClick={props.handleOverlay}>
+        <Add className="add-new__btn--img" />
+      </button>
+    </CSSTransition>
+  );
 }
 
 export default AddNew;
