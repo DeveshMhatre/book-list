@@ -8,7 +8,9 @@ const BookCardContainer = props => {
       {props.books.map(book => {
         return <BookCard
                   key={book.id}
-                  book={book} />
+                  book={book}
+                  handleReadStatus={props.handleReadStatus}
+                  handleDelete={props.handleDelete}/>
       })}
     </section>
   );

@@ -12,6 +12,6 @@
 
 @media screen and (min-width: 768px) {
   .book-card-container {
-    grid-template-columns: repeat(2, clamp(32rem, 45vw, 50rem));
+    grid-template-columns: repeat(2, clamp(32rem, 40vw, 50rem));
   }
 }

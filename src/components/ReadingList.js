@@ -12,34 +12,41 @@ const ReadingList = props => {
   const [books, setBooks] = useState([
     {
       id: 1,
-      title: 'Lorem ipsum dolor',
-      author: 'sit amet consectetur, adipisicing elit',
+      title: 'Range',
+      author: 'David Epstein',
       status: true
     },
     {
       id: 2,
-      title: 'Lorem ipsum dolor',
-      author: 'sit amet consectetur, adipisicing elit',
+      title: 'The Big Sleep',
+      author: 'Raymond Chandler',
       status: false
     },
     {
       id: 3,
-      title: 'Lorem ipsum dolor',
-      author: 'sit amet consectetur, adipisicing elit',
+      title: 'Why I Killed Pluto and Why It Had It Coming',
+      author: 'Mike Brown',
       status: false
     },
     {
       id: 4,
-      title: 'Lorem ipsum dolor',
-      author: 'sit amet consectetur, adipisicing elit',
+      title: 'Surely You\'re Joking, Mr. Feynman!',
+      author: 'Richard P. Feynman',
       status: false
     }
   ]);
+
   const [isOverlay, setIsOverlay] = useState(false); // To show/hide the input overlay
 
   const handleBookSubmit = book => {
     setBooks(prevArr => [...prevArr, book]);
   }
+
+  const handleReadStatus = (bookId => {
+    setBooks(prevBooks => prevBooks.map(book => book.id === bookId ? {...book, status: !book.status} : book));
+  });
+
+  const handleDelete = (bookId => setBooks(books.filter(book => bookId !== book.id)));
 
   const handleOverlay = () => {
     isOverlay ? setIsOverlay(false) : setIsOverlay(true);
@@ -73,7 +80,10 @@ const ReadingList = props => {
     return (
       <article className="reading-list">
 
-        <BookCardContainer books={books} />
+        <BookCardContainer 
+          books={books}
+          handleReadStatus={handleReadStatus}
+          handleDelete={handleDelete} />
 
         <InputOverlay
           isOverlay={isOverlay}
