@@ -1,7 +1,7 @@
 .nav-btn {
   border: none;
   border-radius: 50%;
-  padding: clamp(.5rem, 1vh, 1rem) clamp(.5rem, 1.5vw, 1.5rem);
+  padding: clamp(1rem, 1.5vh, 2rem);
 
   background-color: var(--accent-color);
 
@@ -15,7 +15,7 @@
 
   border: .1rem solid var(--light-color);
   border-radius: 50%;
-  padding: clamp(1.5rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(1rem, 1.5vh, 2rem);
 
   background-color: var(--dark-color);
 
@@ -36,7 +36,7 @@
   cursor: pointer;
   outline: none;
 
-  transition: background-color, color 300ms ease-in;
+  transition: background-color 150ms ease-in, color 150ms ease-in;
 
   &:first-of-type {
     margin-right: 2rem;

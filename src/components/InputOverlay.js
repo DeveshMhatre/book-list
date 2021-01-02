@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
@@ -30,6 +31,7 @@ const InputOverlay = props => {
     // To prevent empty fields from being added to the books list
     if (title !== '' && author !== '') {
       props.handleBookSubmit({
+        id: uuidv4(),
         title: title,
         author: author,
         status: false
