@@ -1,0 +1,70 @@
+.book-card {
+  height: 100%;
+  padding: 2rem 2.5rem;
+  border: .1rem solid transparent;
+  border-bottom-left-radius: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    font-size: clamp(2.2rem, 3vw, 2.8rem);
+  }
+
+  &__author {
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  }
+
+  &__btns {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    &--mark {
+      background-color: var(--light-color);
+    }
+    &--unmark {
+      background-color: var(--dark-color);
+    }
+
+    &--delete,
+    &--update {
+      background-color: var(--accent-color);
+    }
+  }
+
+  &__img {
+    &--mark {
+      path {
+        fill: var(--dark-color);
+      }
+    }
+    &--unmark {
+      path {
+        fill: var(--light-color);
+      }
+    }
+
+    &--delete,
+    &--update {
+      path {
+        fill: var(--light-color);
+      }
+    }
+  }
+}
+
+.read {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.unread {
+  border-color: var(--light-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}

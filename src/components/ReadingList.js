@@ -14,7 +14,7 @@ const ReadingList = props => {
       id: 1,
       title: 'Lorem ipsum dolor',
       author: 'sit amet consectetur, adipisicing elit',
-      status: false
+      status: true
     },
     {
       id: 2,

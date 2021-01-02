@@ -1,8 +1,17 @@
 .book-card-container {
   height: auto;
+  margin: 4rem 0;
 
   display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: 15rem;
-  grid-row-gap: 4rem;
+  grid-template-columns: clamp(32rem, 45vw, 50rem);
+  grid-auto-rows: 25rem;
+  grid-gap: 4rem;
+  justify-content: center;
+}
+
+
+@media screen and (min-width: 768px) {
+  .book-card-container {
+    grid-template-columns: repeat(2, clamp(32rem, 45vw, 50rem));
+  }
 }
