@@ -11,7 +11,7 @@ const AddNew = props => {
   return (
     <CSSTransition
       nodeRef={nodeRef}
-      in={!props.isOverlay}
+      in={!(props.isInputOverlay || props.isUpdateOverlay)}
       classNames='scale'
       timeout={300}>
       <button

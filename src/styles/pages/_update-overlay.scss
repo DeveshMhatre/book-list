@@ -1,0 +1,62 @@
+.update-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba(var(--accent-color-rgb), .57);
+
+  &__form {
+    width: clamp(32rem, 50vw, 60rem);
+    height: clamp(33.4rem, 50vh, 60rem);
+    padding: 0 clamp(2rem, 3vh, 4rem);
+    border: .1rem solid var(--light-color);
+    border-bottom-left-radius: 2.5rem;
+
+    background-color: var(--dark-color);
+  }
+}
+
+.update-form {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__group {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__label {
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    color: var(--light-color);
+  }
+
+  &__input {
+    padding: clamp(1rem, 2vh, 2rem);
+    border: .1rem solid var(--light-color);
+    border-radius: 0;
+
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+  }
+
+  &__btns {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
