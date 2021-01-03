@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import MarkUnmark from './MarkUnmark';
 
@@ -7,21 +7,16 @@ import { ReactComponent as Delete } from '../images/remove.svg';
 import { ReactComponent as Update } from '../images/update.svg';
 
 const BookCard = props => {
-  const nodeRef = React.useRef(null);
-
-  const cardClass = React.useRef(null);
-
-  cardClass.current = props.book.status ? 'read' : 'unread';
+  const [cardClass, setCardClass] = useState('unread');
 
   useEffect(() => {
     // To change colors of the card based on the book status
-    cardClass.current = props.book.status ? 'read' : 'unread';
-  }, [props.book.status]);
+    props.book.status ? setCardClass('read') : setCardClass('unread');
+  }, [cardClass, props.book.status]);
 
   return (
     <div
-      ref={nodeRef}
-      className={`book-card ${cardClass.current}`}>
+      className={`book-card ${cardClass}`}>
 
       <p className="book-card__title">{props.book.title}</p>
 
@@ -40,7 +35,7 @@ const BookCard = props => {
         </button>
       </span>
 
-      <p className="book-card__author">{props.book.author}</p>
+      <p className="book-card__author">by {props.book.author}</p>
 
     </div>
   );

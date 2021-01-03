@@ -63,6 +63,8 @@
 .read {
   background-color: var(--light-color);
   color: var(--dark-color);
+
+  transition: background-color 150ms ease-in, color 150ms ease-in;
 }
 
 .unread {
@@ -70,4 +72,6 @@
 
   background-color: var(--dark-color);
   color: var(--light-color);
+
+  transition: background-color 150ms ease-in, color 150ms ease-in;
 }

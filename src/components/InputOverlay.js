@@ -53,7 +53,7 @@ const InputOverlay = props => {
     <CSSTransition
       nodeRef={nodeRef}
       in={props.isOverlay}
-      classNames="scale"
+      classNames="slide-left"
       unmountOnExit={true}
       timeout={300}>
       <section 
