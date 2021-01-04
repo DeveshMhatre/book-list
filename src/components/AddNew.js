@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Icon, InlineIcon  } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import plusIcon from '@iconify/icons-mdi/plus';
 
 const AddNew = props => {

@@ -66,7 +66,7 @@ const InputOverlay = props => {
               <label
                 className="form__label"
                 htmlFor="form-title">
-                New Book Title
+                Book Title
               </label>
               <input
                 type="text"
@@ -81,7 +81,7 @@ const InputOverlay = props => {
               <label
                 className="form__label"
                 htmlFor="form-author">
-                New Book Author
+                Book Author
               </label>
               <input
                 type="text"

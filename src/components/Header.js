@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, InlineIcon  } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import themeLightDark from '@iconify/icons-mdi/theme-light-dark';
 
 const Header = props => {

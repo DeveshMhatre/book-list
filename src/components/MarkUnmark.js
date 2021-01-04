@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, InlineIcon  } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import bookmarkCheckOutline from '@iconify/icons-mdi/bookmark-check-outline';
 import bookmarkRemoveOutline from '@iconify/icons-mdi/bookmark-remove-outline';
 

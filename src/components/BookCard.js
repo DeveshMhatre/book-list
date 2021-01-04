@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Icon, InlineIcon  } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import pencilIcon from '@iconify/icons-mdi/pencil';
 import deleteIcon from '@iconify/icons-mdi/delete';
 
