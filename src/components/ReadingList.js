@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import AddNew from './AddNew'; // Floating button
 import InputOverlay from './InputOverlay'; // Overlay with input dialog
@@ -8,33 +8,17 @@ import BookCardContainer from './BookCardContainer'; // Individual book card
 import { ReactComponent as Bookshelf } from '../images/bookshelf.svg';
 
 const ReadingList = props => {
-  // const [books, setBooks] = useState([]); // To store all of the books
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      title: 'Range',
-      author: 'David Epstein',
-      status: true
-    },
-    {
-      id: 2,
-      title: 'The Big Sleep',
-      author: 'Raymond Chandler',
-      status: false
-    },
-    {
-      id: 3,
-      title: 'Why I Killed Pluto and Why It Had It Coming',
-      author: 'Mike Brown',
-      status: false
-    },
-    {
-      id: 4,
-      title: 'Surely You\'re Joking, Mr. Feynman!',
-      author: 'Richard P. Feynman',
-      status: false
-    }
-  ]);
+  // Store previously added books, if any present in localStorage
+  // Else assign an empty array
+  const [books, setBooks] = useState(() => {
+    const oldBooks = localStorage.getItem('books');
+    return oldBooks !== null ? JSON.parse(oldBooks) : [];
+  });
+
+  useEffect(() => {
+    // Update localStorage when `books` state is altered
+    localStorage.setItem('books', JSON.stringify(books))
+  }, [books]);
 
   const [isInputOverlay, setIsInputOverlay] = useState(false); // To show/hide the input overlay
   const [isUpdateOverlay, setIsUpdateOverlay] = useState(false); // To show/hide the update overlay

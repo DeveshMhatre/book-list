@@ -17,7 +17,7 @@ const Header = props => {
 
           <CSSTransition
             nodeRef={nodeRef}
-            in={props.theme === 'dark' ? true : false}
+            in={props.theme === 'light' ? true : false}
             classNames="rotate"
             timeout={300}>
             <ThemeSwitch
