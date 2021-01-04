@@ -31,6 +31,7 @@ const BookCard = props => {
 
       <span className="book-card__btns">
         <button
+          title="Update book"
           className="book-card__btn--update card-btn"
           onClick={handleClick}>
           <Update className="book-card__img--update"/>
@@ -40,6 +41,7 @@ const BookCard = props => {
           handleReadStatus={props.handleReadStatus}
           status={props.book.status} />
         <button
+          title="Delete book"
           className="book-card__btn--delete card-btn"
           onClick={() => props.handleDelete(props.book.id)}>
           <Delete className="book-card__img--delete"/>

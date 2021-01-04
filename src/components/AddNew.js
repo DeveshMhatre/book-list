@@ -16,6 +16,7 @@ const AddNew = props => {
       timeout={300}>
       <button
         ref={nodeRef}
+        title="Add a new book"
         className="add-new__btn add-btn"
         onClick={props.handleOverlay}>
         <Add className="add-new__btn--img" />

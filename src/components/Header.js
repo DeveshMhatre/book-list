@@ -10,8 +10,9 @@ const Header = props => {
     <>
 
       <header className="header">
-        <h1 className="header__title">Reading List</h1>
+        <h1 className="header__title">My Reading List</h1>
         <button
+          title="Change the theme"
           className="header__btn nav-btn"
           onClick={props.handleClick}>
 

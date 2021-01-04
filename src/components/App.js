@@ -9,7 +9,7 @@ const App = () => {
   // Else assign light theme
   const [theme, setTheme] = useState(() => {
     const oldTheme = localStorage.getItem('theme');
-    return oldTheme !== null ? oldTheme : 'light';
+    return oldTheme !== null ? oldTheme : 'dark';
   });
 
   const themeSwitch = () => {

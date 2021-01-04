@@ -7,6 +7,7 @@ const MarkUnmark = props => {
   if (props.status) {
     return (
       <button
+        title="Mark as unread"
         className="book-card__btn--unmark card-btn"
         onClick={() => props.handleReadStatus(props.bookId)}>
         <Unmark className="book-card__img--unmark"/>
@@ -16,6 +17,7 @@ const MarkUnmark = props => {
   else {
     return (
       <button
+        title="Mark as read"
         className="book-card__btn--mark card-btn"
         onClick={() => props.handleReadStatus(props.bookId)}>
         <Mark className="book-card__img--mark"/>
