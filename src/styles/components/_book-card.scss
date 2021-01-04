@@ -20,7 +20,7 @@
 
   &__btns {
     margin: auto;
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
   }
@@ -41,21 +41,19 @@
 
   &__img {
     &--mark {
-      path {
-        fill: var(--dark-color);
-      }
-    }
-    &--unmark {
-      path {
-        fill: var(--light-color);
-      }
+      width: clamp(3rem, 4vw, 4rem);
+      height: clamp(3rem, 4vw, 4rem);
+
+      color: var(--dark-color);
     }
 
     &--delete,
-    &--update {
-      path {
-        fill: var(--light-color);
-      }
+    &--update,
+    &--unmark {
+      width: clamp(3rem, 4vw, 4rem);
+      height: clamp(3rem, 4vw, 4rem);
+
+      color: var(--light-color);
     }
   }
 }

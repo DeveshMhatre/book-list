@@ -1,7 +1,7 @@
 import React from 'react';
-
-import { ReactComponent as Mark } from '../images/read.svg';
-import { ReactComponent as Unmark } from '../images/unread.svg';
+import { Icon, InlineIcon  } from '@iconify/react';
+import bookmarkCheckOutline from '@iconify/icons-mdi/bookmark-check-outline';
+import bookmarkRemoveOutline from '@iconify/icons-mdi/bookmark-remove-outline';
 
 const MarkUnmark = props => {
   if (props.status) {
@@ -10,7 +10,9 @@ const MarkUnmark = props => {
         title="Mark as unread"
         className="book-card__btn--unmark card-btn"
         onClick={() => props.handleReadStatus(props.bookId)}>
-        <Unmark className="book-card__img--unmark"/>
+        <Icon
+          icon={bookmarkRemoveOutline}
+          className="book-card__img--unmark"/>
       </button>
     );
   }
@@ -20,7 +22,9 @@ const MarkUnmark = props => {
         title="Mark as read"
         className="book-card__btn--mark card-btn"
         onClick={() => props.handleReadStatus(props.bookId)}>
-        <Mark className="book-card__img--mark"/>
+        <Icon
+          icon={bookmarkCheckOutline}
+          className="book-card__img--mark"/>
       </button>
     );
   }

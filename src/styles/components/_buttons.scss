@@ -1,7 +1,7 @@
 .nav-btn {
   border: none;
   border-radius: 50%;
-  padding: clamp(1rem, 1.5vh, 2rem);
+  padding: clamp(.5rem, 1vh, 1rem);
 
   background-color: var(--accent-color);
 
@@ -16,7 +16,7 @@
 
   border: .1rem solid var(--light-color);
   border-radius: 50%;
-  padding: clamp(1rem, 1.5vh, 2rem);
+  padding: clamp(.5rem, 1vh, 1rem);
 
   background-color: var(--dark-color);
 
@@ -52,5 +52,5 @@
 
 .card-btn {
   @extend .nav-btn;
-  padding: clamp(1.5rem, 2vh, 3rem);
+  padding: clamp(.8rem, 1.5vh, 1.5rem);
 }

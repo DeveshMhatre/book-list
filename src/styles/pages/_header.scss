@@ -1,5 +1,4 @@
 .header {
-  // padding: 0 clamp(4rem, 10vw, 10rem);
   padding: 0 clamp(1.6rem, 4vw, 5rem);
   border: none;
   border-bottom-left-radius: 2.5rem;
@@ -16,12 +15,11 @@
   }
 
   &__img {
-    width: 100%;
-    height: auto;
+    width: clamp(4rem, 5vw, 5rem);
+    height: clamp(4rem, 5vw, 5rem);
 
-    fill: var(--light-color);
+    color: var(--light-color);
     pointer-events: none;
-
   }
 }
 

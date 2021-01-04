@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Icon, InlineIcon  } from '@iconify/react';
+import pencilIcon from '@iconify/icons-mdi/pencil';
+import deleteIcon from '@iconify/icons-mdi/delete';
 
 import MarkUnmark from './MarkUnmark';
-
-import { ReactComponent as Delete } from '../images/remove.svg';
-import { ReactComponent as Update } from '../images/update.svg';
 
 const BookCard = props => {
   // To change BookCard status (appearance-wise) from read to unread, and vice versa
@@ -34,7 +34,9 @@ const BookCard = props => {
           title="Update book"
           className="book-card__btn--update card-btn"
           onClick={handleClick}>
-          <Update className="book-card__img--update"/>
+          <Icon
+            icon={pencilIcon}
+            className="book-card__img--update"/>
         </button>
         <MarkUnmark 
           bookId={props.book.id}
@@ -44,7 +46,9 @@ const BookCard = props => {
           title="Delete book"
           className="book-card__btn--delete card-btn"
           onClick={() => props.handleDelete(props.book.id)}>
-          <Delete className="book-card__img--delete"/>
+          <Icon
+            icon={deleteIcon}
+            className="book-card__img--delete"/>
         </button>
       </span>
 

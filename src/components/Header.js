@@ -1,10 +1,8 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
-
-import { ReactComponent as ThemeSwitch } from '../images/theme-switch.svg';
+import { Icon, InlineIcon  } from '@iconify/react';
+import themeLightDark from '@iconify/icons-mdi/theme-light-dark';
 
 const Header = props => {
-  const nodeRef = React.useRef(null);
 
   return (
     <>
@@ -15,17 +13,9 @@ const Header = props => {
           title="Change the theme"
           className="header__btn nav-btn"
           onClick={props.handleClick}>
-
-          <CSSTransition
-            nodeRef={nodeRef}
-            in={props.theme === 'light' ? true : false}
-            classNames="rotate"
-            timeout={300}>
-            <ThemeSwitch
-              ref={nodeRef}
-              className="header__img" />
-          </CSSTransition>
-
+          <Icon
+            icon={themeLightDark}
+            className="header__img" />
         </button>
       </header>
 

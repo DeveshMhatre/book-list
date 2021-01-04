@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { CSSTransition } from 'react-transition-group';
-
-import { ReactComponent as Add } from '../images/add.svg';
+import { Icon, InlineIcon  } from '@iconify/react';
+import plusIcon from '@iconify/icons-mdi/plus';
 
 const AddNew = props => {
   // To avoid the findDOMNode warning
@@ -19,7 +18,9 @@ const AddNew = props => {
         title="Add a new book"
         className="add-new__btn add-btn"
         onClick={props.handleOverlay}>
-        <Add className="add-new__btn--img" />
+        <Icon
+          icon={plusIcon}
+          className="add-new__btn--img" />
       </button>
     </CSSTransition>
   );
